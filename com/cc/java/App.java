@@ -36,3 +36,44 @@ public class App {
         System.out.println(outStr);
     }
 };
+
+// 2. Iteration Getter + Setter:
+
+// package com.cc.java;
+
+// import java.util.ArrayList;
+// import java.util.List;
+// // hier später evt. ergänzen java.util.Scanner; 3. Iteration? Mitarbeiterdaten über die CLI WÄHREND der Laufzeit eingeben!
+// // hint für später Integer.parseInt()!
+// public class App {
+
+//     public static void main(String[] args) {
+        
+//         // Verwendung einer Liste statt einzelner Variablen!
+//         List<Mitarbeiter> mitarbeiterListe = new ArrayList<>();
+
+//         // Hinzufügen von Objekten direkt in die Liste
+//         mitarbeiterListe.add(new Mitarbeiter("Mustermann", "Max", "Entwickler", 2018));
+//         mitarbeiterListe.add(new Mitarbeiter("Schmidt", "Sybille", "Projektleiterin", 2015));
+//         mitarbeiterListe.add(new Mitarbeiter("Martinelli", "Silvia", "CEO", 2020));
+
+//         // Beispiel für die Nutzung eines Setters (Nachträgliche Änderung)
+//         mitarbeiterListe.get(0).setFunktion("Senior Entwickler");
+
+//         // Dynamische Ausgabe über eine Schleife (Iterieren)
+//         output("Aktuelle Mitarbeiterliste:");
+//         output("-------------------------");
+
+//         for (Mitarbeiter m : mitarbeiterListe) {
+//             // Hier nutzen wir nun den spezifischen Getter
+//             String info = m.getVorname() + " " + m.getName() + 
+//                           " | Position: " + m.getFunktion() + 
+//                           " | Seit: " + m.getEintrittsjahr();
+//             output(info);
+//         }
+//     }
+
+//     private static void output(String outStr) {
+//         System.out.println(outStr);
+//     }
+// };
