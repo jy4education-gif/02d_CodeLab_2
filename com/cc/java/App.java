@@ -12,9 +12,9 @@
 //         // 2. Abruf der Informationen über die getInfo-Methode
 //         // Wir nutzen die bereitgestellte output-Methode zur Anzeige
 //         output("Mitarbeiter 1 Name: " + m1.getInfo("#name"));
-// 		    output("Mitarbeiter 1 Vorname: " + m1.getInfo("#vorname"));
+// 		   output("Mitarbeiter 1 Vorname: " + m1.getInfo("#vorname"));
 //         output("Mitarbeiter 1 Funktion: " + m1.getInfo("#funktion"));
-// 		    output("Mitarbeiter 1 Eintritt: " + m1.getInfo("#eintrittsjahr"));
+// 		   output("Mitarbeiter 1 Eintritt: " + m1.getInfo("#eintrittsjahr"));
 //         output("-------------------------");
 
 //         output("Mitarbeiter 2 Name: " + m2.getInfo("#name"));
