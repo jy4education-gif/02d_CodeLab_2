@@ -39,7 +39,7 @@ public class Mitarbeiter {
                 // Umwandlung von int zu String für einen einheitlichen Rückgabetyp
                 return String.valueOf(eintrittsjahr);
             default:
-                return "Fehler: Ungültiger Parameter!";
+                return "Fehler: Ungueltiger Parameter!";
         }
     }
 }

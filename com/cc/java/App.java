@@ -12,20 +12,25 @@ public class App {
         // 2. Abruf der Informationen über die getInfo-Methode
         // Wir nutzen die bereitgestellte output-Methode zur Anzeige
         output("Mitarbeiter 1 Name: " + m1.getInfo("#name"));
+		output("Mitarbeiter 1 Vorname: " + m1.getInfo("#vorname"));
         output("Mitarbeiter 1 Funktion: " + m1.getInfo("#funktion"));
-        
+		output("Mitarbeiter 1 Eintritt: " + m1.getInfo("#eintrittsjahr"));
         output("-------------------------");
 
-        output("Mitarbeiter 2 Vorname: " + m2.getInfo("#vorname"));
-        output("Mitarbeiter 2 Eintritt: " + m2.getInfo("#eintrittsjahr"));
-
+        output("Mitarbeiter 2 Name: " + m2.getInfo("#name"));
+		output("Mitarbeiter 2 Vorname: " + m2.getInfo("#vorname"));
+        output("Mitarbeiter 2 Funktion: " + m2.getInfo("#funktion"));
+		output("Mitarbeiter 2 Eintritt: " + m2.getInfo("#eintrittsjahr"));
         output("-------------------------");
 
         output("Mitarbeiter 3 Name: " + m3.getInfo("#name"));
+		output("Mitarbeiter 3 Vorname: " + m3.getInfo("#vorname"));
         output("Mitarbeiter 3 Funktion: " + m3.getInfo("#funktion"));
+		output("Mitarbeiter 3 Eintritt: " + m3.getInfo("#eintrittsjahr"));
+        output("-------------------------");
         
-        // Test eines falschen Parameters
-        output("Test Fehlerfall: " + m3.getInfo("#gehalt"));
+        // // Test eines falschen Parameters
+        // output("Test Fehlerfall: " + m3.getInfo("#gehalt"));
 
     }
 
