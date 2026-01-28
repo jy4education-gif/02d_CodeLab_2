@@ -1,46 +1,84 @@
+// package com.cc.java;
+
+// public class App {
+
+//     public static void main(String[] args) {
+        
+//         // 1. Instanziierung der Mitarbeiter-Objekte über den Konstruktor
+//         Mitarbeiter m1 = new Mitarbeiter("Mustermann", "Max", "Entwickler", 2018);
+//         Mitarbeiter m2 = new Mitarbeiter("Schmidt", "Sybille", "Projektleiterin", 2015);
+//         Mitarbeiter m3 = new Mitarbeiter("Martinelli", "Silvia", "CEO", 2020);
+
+//         // 2. Abruf der Informationen über die getInfo-Methode
+//         // Wir nutzen die bereitgestellte output-Methode zur Anzeige
+//         output("Mitarbeiter 1 Name: " + m1.getInfo("#name"));
+// 		output("Mitarbeiter 1 Vorname: " + m1.getInfo("#vorname"));
+//         output("Mitarbeiter 1 Funktion: " + m1.getInfo("#funktion"));
+// 		output("Mitarbeiter 1 Eintritt: " + m1.getInfo("#eintrittsjahr"));
+//         output("-------------------------");
+
+//         output("Mitarbeiter 2 Name: " + m2.getInfo("#name"));
+// 		output("Mitarbeiter 2 Vorname: " + m2.getInfo("#vorname"));
+//         output("Mitarbeiter 2 Funktion: " + m2.getInfo("#funktion"));
+// 		output("Mitarbeiter 2 Eintritt: " + m2.getInfo("#eintrittsjahr"));
+//         output("-------------------------");
+
+//         output("Mitarbeiter 3 Name: " + m3.getInfo("#name"));
+// 		output("Mitarbeiter 3 Vorname: " + m3.getInfo("#vorname"));
+//         output("Mitarbeiter 3 Funktion: " + m3.getInfo("#funktion"));
+// 		output("Mitarbeiter 3 Eintritt: " + m3.getInfo("#eintrittsjahr"));
+//         output("-------------------------");
+        
+//         // // Test eines falschen Parameters
+//         // output("Test Fehlerfall: " + m3.getInfo("#gehalt"));
+
+//     }
+
+//     /**
+//      * Hilfsmethode zur Konsolenausgabe
+//      */
+//     private static void output(String outStr) {
+//         System.out.println(outStr);
+//     }
+// };
+
+//Iteration 1.2: Übergabe von Referenzobjekten
+
 package com.cc.java;
 
 public class App {
 
     public static void main(String[] args) {
         
-        // 1. Instanziierung der Mitarbeiter-Objekte über den Konstruktor
+        // 1. Instanziierung (Referenzen m1, m2, m3 zeigen auf die Objekte im Heap)
         Mitarbeiter m1 = new Mitarbeiter("Mustermann", "Max", "Entwickler", 2018);
         Mitarbeiter m2 = new Mitarbeiter("Schmidt", "Sybille", "Projektleiterin", 2015);
         Mitarbeiter m3 = new Mitarbeiter("Martinelli", "Silvia", "CEO", 2020);
 
-        // 2. Abruf der Informationen über die getInfo-Methode
-        // Wir nutzen die bereitgestellte output-Methode zur Anzeige
-        output("Mitarbeiter 1 Name: " + m1.getInfo("#name"));
-		output("Mitarbeiter 1 Vorname: " + m1.getInfo("#vorname"));
-        output("Mitarbeiter 1 Funktion: " + m1.getInfo("#funktion"));
-		output("Mitarbeiter 1 Eintritt: " + m1.getInfo("#eintrittsjahr"));
-        output("-------------------------");
+        // 2. Elegante Lösung: Ein Array für die Stapelverarbeitung
+        Mitarbeiter[] team = {m1, m2, m3};
 
-        output("Mitarbeiter 2 Name: " + m2.getInfo("#name"));
-		output("Mitarbeiter 2 Vorname: " + m2.getInfo("#vorname"));
-        output("Mitarbeiter 2 Funktion: " + m2.getInfo("#funktion"));
-		output("Mitarbeiter 2 Eintritt: " + m2.getInfo("#eintrittsjahr"));
-        output("-------------------------");
-
-        output("Mitarbeiter 3 Name: " + m3.getInfo("#name"));
-		output("Mitarbeiter 3 Vorname: " + m3.getInfo("#vorname"));
-        output("Mitarbeiter 3 Funktion: " + m3.getInfo("#funktion"));
-		output("Mitarbeiter 3 Eintritt: " + m3.getInfo("#eintrittsjahr"));
-        output("-------------------------");
-        
-        // // Test eines falschen Parameters
-        // output("Test Fehlerfall: " + m3.getInfo("#gehalt"));
-
+        // 3. Iteration über das Array
+        for (Mitarbeiter person : team) {
+            displayProfile(person); // Wir übergeben die Referenz
+        }
     }
 
     /**
-     * Hilfsmethode zur Konsolenausgabe
+     * Die "Visitenkarten"-Methode
+     * Diese Methode erwartet ein komplettes Mitarbeiter-Objekt.
      */
+    private static void displayProfile(Mitarbeiter m) {
+        output(String.format("PROFIL: %s, %s", m.getName().toUpperCase(), m.getVorname()));
+        output("Position: " + m.getFunktion());
+        output("Dienstzeit seit: " + m.getEintrittsjahr());
+        output("-------------------------");
+    }
+
     private static void output(String outStr) {
         System.out.println(outStr);
     }
-};
+}
 
 // 2. Iteration Getter + Setter:
 
