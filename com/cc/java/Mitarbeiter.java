@@ -27,27 +27,27 @@
 //      * parameter flag Bestimmt, welche Information zurückgegeben wird.
 //      * return gibt den Wert des entsprechenden Feldes als String zurück.
 //      */
-//     public String getInfo(String flag) {
-//         switch (flag) {
-//             case "#name":
-//                 return name;
-//             case "#vorname":
-//                 return vorname;
-//             case "#funktion":
-//                 return funktion;
-//             case "#eintrittsjahr":
-//                 // Umwandlung von int zu String für einen einheitlichen Rückgabetyp
-//                 return String.valueOf(eintrittsjahr);
-//             default:
-//                 return "Fehler: Ungueltiger Parameter!";
-//         }
+    //     public String getInfo(String flag) {
+    //         switch (flag) {
+    //             case "#name":
+    //                 return name;
+    //             case "#vorname":
+    //                 return vorname;
+    //             case "#funktion":
+    //                 return funktion;
+    //             case "#eintrittsjahr":
+    //                 // Umwandlung von int zu String für einen einheitlichen Rückgabetyp
+    //                 return String.valueOf(eintrittsjahr);
+    //             default:
+    //                 return "Fehler: Ungueltiger Parameter!";
+    //         }
 //     }
 // }
 
 //Iteration 1.2: Übergabe von Referenzobjekten
 
 package com.cc.java;
-
+import java.time.Year;
 public class Mitarbeiter {
 
     private String name;
@@ -62,11 +62,15 @@ public class Mitarbeiter {
         this.eintrittsjahr = eintrittsjahr;
     }
 
-    // Getter: 
+    // Getter: hier mit einzelnen Gettern (Standard) anstatt switch/case Struktur + Feature Dienstalter: 
     public String getName() { return name; }
     public String getVorname() { return vorname; }
     public String getFunktion() { return funktion; }
     public int getEintrittsjahr() { return eintrittsjahr; }
+    public int getDienstalter() {
+        int aktuellesJahr = Year.now().getValue();
+        return aktuellesJahr - eintrittsjahr;
+    }
 }
 
 
