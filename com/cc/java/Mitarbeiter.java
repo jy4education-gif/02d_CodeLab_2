@@ -44,34 +44,34 @@
 //     }
 // }
 
-//Iteration 1.2: Übergabe von Referenzobjekten
+// //Iteration 1.2: Übergabe von Referenzobjekten
 
-package com.cc.java;
-import java.time.Year;
-public class Mitarbeiter {
+// package com.cc.java;
+// import java.time.Year;
+// public class Mitarbeiter {
 
-    private String name;
-    private String vorname;
-    private String funktion;
-    private int eintrittsjahr;
+//     private String name;
+//     private String vorname;
+//     private String funktion;
+//     private int eintrittsjahr;
 
-    public Mitarbeiter(String name, String vorname, String funktion, int eintrittsjahr) {
-        this.name = name;
-        this.vorname = vorname;
-        this.funktion = funktion;
-        this.eintrittsjahr = eintrittsjahr;
-    }
+//     public Mitarbeiter(String name, String vorname, String funktion, int eintrittsjahr) {
+//         this.name = name;
+//         this.vorname = vorname;
+//         this.funktion = funktion;
+//         this.eintrittsjahr = eintrittsjahr;
+//     }
 
-    // Getter: hier mit einzelnen Gettern (Standard) anstatt switch/case Struktur + Feature Dienstalter: 
-    public String getName() { return name; }
-    public String getVorname() { return vorname; }
-    public String getFunktion() { return funktion; }
-    public int getEintrittsjahr() { return eintrittsjahr; }
-    public int getDienstalter() {
-        int aktuellesJahr = Year.now().getValue();
-        return aktuellesJahr - eintrittsjahr;
-    }
-}
+//     // Getter: hier mit einzelnen Gettern (Standard) anstatt switch/case Struktur + Feature Dienstalter: 
+//     public String getName() { return name; }
+//     public String getVorname() { return vorname; }
+//     public String getFunktion() { return funktion; }
+//     public int getEintrittsjahr() { return eintrittsjahr; }
+//     public int getDienstalter() {
+//         int aktuellesJahr = Year.now().getValue();
+//         return aktuellesJahr - eintrittsjahr;
+//     }
+// }
 
 
 // 2. Iteration Getter + Setter:
@@ -107,3 +107,95 @@ public class Mitarbeiter {
 //     public void setFunktion(String funktion) { this.funktion = funktion; }
 //     public void setEintrittsjahr(int eintrittsjahr) { this.eintrittsjahr = eintrittsjahr; }
 // }
+
+// // Lösung Yasin:
+// package com.cc.java;
+
+// public class Mitarbeiter {
+    
+//     // Felder eingenschaften
+//     private String name;
+//     private String vorname;
+//     private String funktion;
+//     private int eintrittsjahr;
+    
+//     // Konstruktor
+//     public Mitarbeiter(String name, String vorname, String funktion, int eintrittsjahr) {
+//         this.name = name;
+//         this.vorname = vorname;
+//         this.funktion = funktion;
+//         this.eintrittsjahr = eintrittsjahr;
+//     }
+//     // Getter-Methoden für alle Felder
+//     public String getName() {
+//         return name;
+//     }
+    
+//     public String getVorname() {
+//         return vorname;
+//     }
+    
+//     public String getFunktion() {
+//         return funktion;
+//     }
+    
+//     public int getEintrittsjahr() {
+//         return eintrittsjahr;
+//     }
+    
+//     // Methode getInfo()
+//     public String getInfo(String parameter) {
+// 		// toLowerCase() Großbuchstaben werden in Kleinbuchstaben umgewandelt.
+//         switch (parameter.toLowerCase()) {
+//             case "name":
+//                 return "Name: " + name;
+//             case "vorname":
+//                 return "Vorname: " + vorname;
+//             case "funktion":
+//                 return "Funktion: " + funktion;
+//             case "eintrittsjahr":
+//                 return "Eintrittsjahr: " + eintrittsjahr;
+//             case "vollständig":
+//                 return vorname + " " + name + " - " + funktion + " (seit " + eintrittsjahr + ")";
+//             case "kurz":
+//                 return vorname + " " + name;
+//             default:
+//                 return "Ungültiger Eingabeparameter";
+//         }
+//     }
+// }
+
+// Lösung Dozent:
+
+package com.cc.java;
+
+public class Mitarbeiter {
+	
+	private String familyName ;
+	private String firstName;
+	private String role ;
+	private int yearOfEntry ;
+	
+	public Mitarbeiter(String familyName, String firstName, String role, int yearOfEntry) {
+		this.familyName = familyName;
+		this.firstName = firstName;
+		this.role = role;
+		this.yearOfEntry = yearOfEntry;
+	}
+
+
+	public String getInfo(String flag) {
+		switch (flag) {
+			case "#name":
+				return this.firstName +" " + this.familyName;
+			case "#position":
+				return this.role;
+			case "#time":
+				return Integer.toString(this.yearOfEntry);//"2020"
+				// return this.yearOfEntry; // 2020
+			default:
+				return "ERROR";
+		}
+	}
+
+}

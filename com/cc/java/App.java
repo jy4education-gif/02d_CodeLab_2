@@ -42,41 +42,41 @@
 //     }
 // };
 
-//Iteration 1.2: Übergabe von Referenzobjekten
+// //Iteration 1.2: Übergabe von Referenzobjekten
 
-package com.cc.java;
+// package com.cc.java;
 
-public class App {
+// public class App {
 
-    public static void main(String[] args) {
+//     public static void main(String[] args) {
         
-        // 1. Instanziierung (Referenzen m1, m2, m3 zeigen auf die Objekte im Heap) ->> Heap (global, alle Objekte) vs. Stack (lokale Var, Methodenaufrufe, primitve Datentypen)
-        Mitarbeiter m1 = new Mitarbeiter("Zuckerberg", "Markus", "Entwickler", 2004);
-        Mitarbeiter m2 = new Mitarbeiter("Pfirsich", "Sundar", "Projektleiter", 1998);
-        Mitarbeiter m3 = new Mitarbeiter("Tore", "Willhelm", "CEO", 1975);
+//         // 1. Instanziierung (Referenzen m1, m2, m3 zeigen auf die Objekte im Heap) ->> Heap (global, alle Objekte) vs. Stack (lokale Var, Methodenaufrufe, primitve Datentypen)
+//         Mitarbeiter m1 = new Mitarbeiter("Zuckerberg", "Markus", "Entwickler", 2004);
+//         Mitarbeiter m2 = new Mitarbeiter("Pfirsich", "Sundar", "Projektleiter", 1998);
+//         Mitarbeiter m3 = new Mitarbeiter("Tore", "Willhelm", "CEO", 1975);
 
-        // 2. "Elegante" Lösung mittels Array für Stappelverarbeitung, Referenzen werden hier gebündelt
-        Mitarbeiter[] team = {m1, m2, m3};
+//         // 2. "Elegante" Lösung mittels Array für Stappelverarbeitung, Referenzen werden hier gebündelt
+//         Mitarbeiter[] team = {m1, m2, m3}; // Refrenzen auf die Objekte
 
-       // 3. Iteration über das Array mit einer klassischen for-Schleife
-        for (int i = 0; i < team.length; i++) {  // Wir nutzen den Index 'i', um die ID für die Anzeige zu generieren.
-            displayProfile(team[i], i + 1);     // Wir übergeben das Objekt (Referenz) und den berechneten Index
-        }
-    }
-        // 4. Ausgabe über die Methode 'displayProfile' >> Wir lassen die Instanzvariablen gemäß ReadMe unberührt und geben die ID anhand des Index aus und berechnen das Feature Dienstalter über die Systemzeit dynamisch..  
-        private static void displayProfile(Mitarbeiter m, int i) {
-        output(String.format("Name, Vorname: %s, %s", m.getName(), m.getVorname())); // besser als: 'output("Name, Vorname:  " + m.getName() + ", " + m.getVorname());' >> '%s' ist hier der Platzhalter für das jeweilige Argument
-        output(String.format("Position, Current ID: %s, %s", m.getFunktion(), i));
-        output("Dienstzeit seit: " + m.getEintrittsjahr());
-        output("Dienstalter: " + m.getDienstalter() + " Jahre");
-        output("-------------------------");
+//        // 3. Iteration über das Array mit einer klassischen for-Schleife
+//         for (int i = 0; i < team.length; i++) {  // Wir nutzen den Index 'i', um die ID für die Anzeige zu generieren.
+//             displayProfile(team[i], i + 1);     // Wir übergeben das Objekt (Referenz) und den berechneten Index
+//         }
+//     }
+//         // 4. Ausgabe über die Methode 'displayProfile' >> Wir lassen die Instanzvariablen gemäß ReadMe unberührt und geben die ID anhand des Index aus und berechnen das Feature Dienstalter über die Systemzeit dynamisch..  
+//         private static void displayProfile(Mitarbeiter m, int i) {
+//         output(String.format("Name, Vorname: %s, %s", m.getName(), m.getVorname())); // besser als: 'output("Name, Vorname:  " + m.getName() + ", " + m.getVorname());' >> '%s' ist hier der Platzhalter für das jeweilige Argument
+//         output(String.format("Position, Current ID: %s, %s", m.getFunktion(), i));
+//         output("Dienstzeit seit: " + m.getEintrittsjahr());
+//         output("Dienstalter: " + m.getDienstalter() + " Jahre");
+//         output("-------------------------");
        
-    }
+//     }
 
-    private static void output(String outStr) {
-        System.out.println(outStr);
-    }
-}
+//     private static void output(String outStr) {
+//         System.out.println(outStr);
+//     }
+// }
 
 // 2. Iteration Getter + Setter:
 
@@ -118,3 +118,59 @@ public class App {
 //         System.out.println(outStr);
 //     }
 // };
+
+// // Lösung Yasin:
+// package com.cc.java;
+
+// public class App {
+    
+//     public static void main(String[] args) {
+        
+//         // drei Objekte instanziieren
+//         Mitarbeiter mitarbeiter1 = new Mitarbeiter("Schneider", "Laura", "Projektleiterin", 2019);
+//         Mitarbeiter mitarbeiter2 = new Mitarbeiter("Becker", "Tom", "Softwareentwickler", 2021);
+//         Mitarbeiter mitarbeiter3 = new Mitarbeiter("Keller", "Anna", "HR Managerin", 2018);
+        
+    
+//         ausgabeMitarbeiterInfo(mitarbeiter1);
+//         ausgabeMitarbeiterInfo(mitarbeiter2);
+//         ausgabeMitarbeiterInfo(mitarbeiter3);
+//     }
+    
+//     private static void ausgabeMitarbeiterInfo(Mitarbeiter ma) {
+//         System.out.println(ma.getInfo("vollständig"));
+    
+    
+// }
+// }
+
+// Lösung Dozent:
+
+package com.cc.java;
+
+public class App {
+
+	public static void main(String[] args) {
+	
+		Mitarbeiter mitarbeiter1 = new Mitarbeiter("Mütze", "Maxine", "CTO", 2017);
+		Mitarbeiter mitarbeiter2 = new Mitarbeiter("Mützerich", "Max", "COO", 2018);
+		Mitarbeiter mitarbeiter3 = new Mitarbeiter("Martinelli", "Silvia", "CEO", 2020);
+		
+		pollMitarbeiter(mitarbeiter1);
+		pollMitarbeiter(mitarbeiter2);
+		pollMitarbeiter(mitarbeiter3);
+
+	}
+
+	private static void pollMitarbeiter(Mitarbeiter ma) {
+		output(ma.getInfo("#name"));
+		output(ma.getInfo("#position"));
+		output(ma.getInfo("#time"));
+		output("-------------------");
+	} 
+
+	private static void output(String outStr) {
+		System.out.println(outStr);
+	}
+
+};
