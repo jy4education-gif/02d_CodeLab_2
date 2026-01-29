@@ -22,8 +22,8 @@
 
 //     /**
 //      * Die Methode getInfo() gibt je nach Parameter einen spezifischen Wert zurück.
-//      * In einer zweiten Iteration werde ich dies durch Getter ersetzen und versuchen und
-//      * auch Setter als Feature ergänzen, erste Iteration für Parameter-Steuerung.
+//      * In einer zweiten Iteration werde ich die switch/case Getter Struktur ersetzen und versuchen 
+//      * die Eingabe der Mitarbeiter Daten durch einen Setter als Feature zu ergänzen. Hier erste Iteration für Parameter-Steuerung.
 //      * parameter flag Bestimmt, welche Information zurückgegeben wird.
 //      * return gibt den Wert des entsprechenden Feldes als String zurück.
 //      */
